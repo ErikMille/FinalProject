@@ -1,3 +1,6 @@
+@extends('layouts/app')
+
+@section('content')
 @if($user->tutor)
 <form method="post" action="{{action('TutorController@update',$user->id)}}">
     @csrf
@@ -46,3 +49,5 @@
     </div>
 </form><br>
 @endif
+
+@endsection

@@ -1,4 +1,5 @@
-
+@extends('layouts/app')
+@section('content')
 <form method="post" action="{{action('UserController@update',$user->id)}}">
     @csrf
     @method('PUT')
@@ -18,3 +19,4 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form><br>
+@endsection

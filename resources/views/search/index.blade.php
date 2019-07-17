@@ -1,6 +1,6 @@
 @extends('layouts/app')
-
 @section('content')
+<div class="container justify-content-center" style="max-width:800px">
 <h1>SEARCH</h1>
 <form action="{{action('SearchController@index')}}" method="post">
     @csrf
@@ -8,7 +8,7 @@
     <label>subj</label>
     <select name="subject_name_id" class="form-control">
         @foreach($subject_names as $subject_name)
-            <option value="{{$subject_name->id}}">{{$subject_name->name}}</option>
+            <option value="{{$subject_name->id}}" >{{$subject_name->name}}</option>
         @endforeach
     </select><br>
     <label>topic</label>
@@ -24,11 +24,9 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<div>
-    <example-component></example-component>
 </div>
-@foreach($tutors as $tutor)
-
-@endforeach
+<section style="margin-top:2rem">
+    <div id="example" data-tutors="{{$tutors}}"></div>
+</section>
 
 @endsection
