@@ -5,15 +5,15 @@
 <form action="{{action('SearchController@index')}}" method="post">
     @csrf
   <div class="form-group">
-    <label>subj</label>
+    <label>Subject</label>
     <select name="subject_name_id" class="form-control">
         @foreach($subject_names as $subject_name)
             <option value="{{$subject_name->id}}" >{{$subject_name->name}}</option>
         @endforeach
     </select><br>
-    <label>topic</label>
+    <label>Topic</label>
         <input type="text" name="topic" class="form-control"><br>
-    <label>level</label>
+    <label>Level</label>
     <select name="level" class="form-control">
             <option value="beginer">beginer</option>
             <option value="intermediate">intermediate</option>
