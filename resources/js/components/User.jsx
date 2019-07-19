@@ -14,9 +14,9 @@ const User = (props) => {
                     padding:'0.5rem',
                     borderRadius:'3px',
     }
-    if (props.subjects){const subjects=JSON.parse(props.subjects)}
+    const subjects=props.tutor?JSON.parse(props.subjects):null
     const names=JSON.parse(props.names)
-    if (props.tutor){const tutor=JSON.parse(props.tutor)}
+    const tutor=props.tutor?JSON.parse(props.tutor):null
     const user=JSON.parse(props.user)
     return (
             <div className="container">

@@ -61649,17 +61649,9 @@ var User = function User(props) {
     padding: '0.5rem',
     borderRadius: '3px'
   };
-
-  if (props.subjects) {
-    var _subjects = JSON.parse(props.subjects);
-  }
-
+  var subjects = props.tutor ? JSON.parse(props.subjects) : null;
   var names = JSON.parse(props.names);
-
-  if (props.tutor) {
-    var _tutor = JSON.parse(props.tutor);
-  }
-
+  var tutor = props.tutor ? JSON.parse(props.tutor) : null;
   var user = JSON.parse(props.user);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
