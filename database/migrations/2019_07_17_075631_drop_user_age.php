@@ -13,9 +13,9 @@ class DropUserAge extends Migration
      */
     public function up()
     {
-        // Schema::table('users', function (Blueprint $table) {
-        //     $table->date('age')->nullable();
-        // });
+        Schema::table('users', function (Blueprint $table) {
+            $table->date('age')->nullable();
+        });
     }
 
     /**
@@ -25,6 +25,8 @@ class DropUserAge extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('age');
+        });
     }
 }

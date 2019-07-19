@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tutor;
 use App\User;
-
+use App\SubjectName;
+use Croppa;
 
 class UserController extends Controller
 {
@@ -54,7 +55,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user=User::find($id);
-        return view('users/show',compact('user'));
+        $user->setAttribute('img_url',Croppa::url($user->image,200,200));
+        $subject_names=SubjectName::all();
+        return view('users/show',compact('user','subject_names'));
     }
 
     /**
@@ -84,10 +87,12 @@ class UserController extends Controller
         if($id!=\Auth::user()->id){
             return redirect(action('UserController@show',$id));
         }
+        $file=$request->file('image');
+        $image_path=$file->storeAs('images', $file->getClientOriginalName(), 'local');
         $user=User::find($id);
         $user->age=$request->age;
         $user->gender=$request->gender;
-        $user->image=$request->image;
+        $user->image=$image_path;
         $user->save();
         return redirect(action('UserController@show',$id));
 

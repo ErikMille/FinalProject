@@ -16,8 +16,7 @@
 // });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/home', 'SearchController@index')->name('home');
 Route::get('/','SearchController@index');
 Route::post('/index','SearchController@index');
 Route::resource('/user','UserController');

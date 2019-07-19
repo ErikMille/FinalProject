@@ -61560,7 +61560,7 @@ var Card = function Card(_ref) {
       width: '200px',
       height: '200px'
     },
-    src: "https://pbs.twimg.com/media/DuuVwbWWwAEtrTf.jpg",
+    src: user.image,
     alt: "Card image cap"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
@@ -61569,7 +61569,7 @@ var Card = function Card(_ref) {
   }, tutor.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"
   }, tutor.exp), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/user/1",
+    href: "/user/".concat(tutor.user_id),
     className: "btn btn-primary"
   }, "\u041F\u0435\u0440\u0435\u0445\u043E\u0434 \u043A\u0443\u0434\u0430-\u043D\u0438\u0431\u0443\u0434\u044C")))));
 };
@@ -61636,6 +61636,18 @@ __webpack_require__.r(__webpack_exports__);
 var User = function User(props) {
   console.log('tutor', props.tutor);
   console.log('user', props.user);
+  console.log('subj', props.subjects);
+  console.log('subj', props.names);
+  console.log(props.edit);
+  var subjStyle = {
+    color: "white",
+    backgroundColor: '#698db3',
+    margin: '0.25rem',
+    padding: '0.5rem',
+    borderRadius: '3px'
+  };
+  var subjects = JSON.parse(props.subjects);
+  var names = JSON.parse(props.names);
   var tutor = JSON.parse(props.tutor);
   var user = JSON.parse(props.user);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -61645,8 +61657,12 @@ var User = function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card",
     style: {
-      width: '800px',
-      flexDirection: 'row'
+      width: '800px'
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row",
+    style: {
+      margin: '10px'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "img-thumbnail mx-auto",
@@ -61654,17 +61670,33 @@ var User = function User(props) {
       width: '200px',
       height: '200px'
     },
-    src: "https://pbs.twimg.com/media/DuuVwbWWwAEtrTf.jpg",
+    src: user.img_url,
     alt: "Card image cap"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "card-title"
   }, user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"
-  }, "City:", user.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Email: ", user.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"
-  }, "Age:", (new Date().getTime() - new Date(user.updated_at)) / (24 * 3600 * 365.25 * 1000) | 0, " Gender: ", user.gender)))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Age: ", (new Date().getTime() - new Date(user.age)) / (24 * 3600 * 365.25 * 1000) | 0), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Gender: ", user.gender)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "City: ", tutor.city), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Postcode: ", tutor.postcode), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Subjects:"), subjects.map(function (subject) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      key: subject.id,
+      style: subjStyle
+    }, " ", names[subject.subject_name_id - 1].name);
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body col-12"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Experience"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, tutor.exp)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, tutor.about)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), props.edit ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/user/".concat(user.id, "/edit"),
+    className: "btn btn-primary"
+  }, "Edit") : '')));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (User);
