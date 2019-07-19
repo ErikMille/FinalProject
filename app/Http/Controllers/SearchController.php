@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Tutor;
 use App\Subject;
 use App\SubjectName;
+use Croppa;
+
 class SearchController extends Controller
 {
     public function search(){
@@ -22,6 +24,9 @@ class SearchController extends Controller
             ->where('level',$request->level)->where('topic','like','%'.$request->topic.'%')
             ->where('price','>=',$request->price);
         })->get();
+        foreach ($tutors as $key => $tutor) {
+            $tutor->setAttribute('img_url',Croppa::url($tutor->image,200,200));
+        }
         $subject_names=SubjectName::all();
         return view('search/index',compact('tutors','subject_names'));
     }

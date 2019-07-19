@@ -61560,7 +61560,7 @@ var Card = function Card(_ref) {
       width: '200px',
       height: '200px'
     },
-    src: user.image,
+    src: tutor.img_url,
     alt: "Card image cap"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
@@ -61571,7 +61571,7 @@ var Card = function Card(_ref) {
   }, tutor.exp), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/user/".concat(tutor.user_id),
     className: "btn btn-primary"
-  }, "\u041F\u0435\u0440\u0435\u0445\u043E\u0434 \u043A\u0443\u0434\u0430-\u043D\u0438\u0431\u0443\u0434\u044C")))));
+  }, "Detail")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Card);
