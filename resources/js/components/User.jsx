@@ -21,7 +21,7 @@ const User = (props) => {
     return (
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="card" style={{width: '800px'}}>
+                    <div className="card" style={{width: '800px',margin: '1rem'}}>
                         
                         <div className="row" style={{margin: '10px'}}>
                             <img className="img-thumbnail mx-auto" style={{width: '200px',height: '200px'}} src={user.img_url} alt="Card image cap"></img>
