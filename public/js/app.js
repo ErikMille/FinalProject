@@ -61660,7 +61660,8 @@ var User = function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card",
     style: {
-      width: '800px'
+      width: '800px',
+      margin: '1rem'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row",
