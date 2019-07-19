@@ -61570,7 +61570,10 @@ var Card = function Card(_ref) {
     className: "card-text"
   }, tutor.exp), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/user/".concat(tutor.user_id),
-    className: "btn btn-primary"
+    className: "btn btn-primary",
+    style: {
+      backgroundColor: '#698db3'
+    }
   }, "Detail")))));
 };
 
@@ -61695,7 +61698,10 @@ var User = function User(props) {
     className: "card-text"
   }, tutor.about)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), props.edit ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/user/".concat(user.id, "/edit"),
-    className: "btn btn-primary"
+    className: "btn btn-primary",
+    style: {
+      backgroundColor: '#698db3'
+    }
   }, "Edit") : '')));
 };
 

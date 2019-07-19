@@ -45,7 +45,7 @@ const User = (props) => {
                                 <p className="card-text">{tutor.about}</p>
                             </div><br/>
                         </div>
-                        {props.edit?<a href={`/user/${user.id}/edit`} className="btn btn-primary">Edit</a>:''}
+                        {props.edit?<a href={`/user/${user.id}/edit`} className="btn btn-primary" style={{backgroundColor:'#698db3'}}>Edit</a>:''}
                     </div>
                 </div>
             </div>

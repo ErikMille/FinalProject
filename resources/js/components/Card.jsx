@@ -12,7 +12,7 @@ const Card = ({tutor}) => {
                         <div className="card-body">
                             <h5 className="card-title">{tutor.name}</h5>
                             <p className="card-text">{tutor.exp}</p>
-                            <a href={`/user/${tutor.user_id}`} className="btn btn-primary">Detail</a>
+                            <a href={`/user/${tutor.user_id}`} className="btn btn-primary" style={{backgroundColor:'#698db3'}}>Detail</a>
                         </div>
                     </div>
                 </div>

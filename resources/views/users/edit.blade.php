@@ -22,7 +22,7 @@
                 <label>image</label>
                 <input type="file" name="image" class="form-control">
             </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" style="background-color:#698db3;">Submit</button>
     </div>
 </form><br>
 
@@ -56,7 +56,7 @@
                 <span class="subj">{{$subject->subject_name->name}}</span>
             @endforeach
             <br><br>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" style="background-color:#698db3;">Submit</button>
     </div>
 </form><br>
 @else
@@ -79,7 +79,7 @@
                 <label>about</label>
                 <textarea rows="10" cols="45" name="exp"></textarea>
             </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" style="background-color:#698db3;">Submit</button>
     </div>
 </form><br>
 @endif

@@ -22,7 +22,7 @@
     <label>Price</label>
         <input type="number" name="price" class="form-control"><br>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" style="background-color:#698db3;" class="btn btn-primary">Submit</button>
 </form>
 </div>
 <section style="margin-top:2rem">
