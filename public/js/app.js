@@ -61649,9 +61649,17 @@ var User = function User(props) {
     padding: '0.5rem',
     borderRadius: '3px'
   };
-  var subjects = JSON.parse(props.subjects);
+
+  if (props.subjects) {
+    var _subjects = JSON.parse(props.subjects);
+  }
+
   var names = JSON.parse(props.names);
-  var tutor = JSON.parse(props.tutor);
+
+  if (props.tutor) {
+    var _tutor = JSON.parse(props.tutor);
+  }
+
   var user = JSON.parse(props.user);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
@@ -61683,14 +61691,14 @@ var User = function User(props) {
     className: "card-text"
   }, "Email: ", user.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Age: ", (new Date().getTime() - new Date(user.age)) / (24 * 3600 * 365.25 * 1000) | 0), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Gender: ", user.gender)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Age: ", (new Date().getTime() - new Date(user.age)) / (24 * 3600 * 365.25 * 1000) | 0), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Gender: ", user.gender)), props.tutor && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "City: ", tutor.city), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Postcode: ", tutor.postcode), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Subjects:"), subjects.map(function (subject) {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "City: ", tutor.city), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Postcode: ", tutor.postcode), " "), props.tutor && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Subjects:"), subjects.map(function (subject) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       key: subject.id,
       style: subjStyle
     }, " ", names[subject.subject_name_id - 1].name);
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), props.tutor && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body col-12"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Experience"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"

@@ -14,9 +14,9 @@ const User = (props) => {
                     padding:'0.5rem',
                     borderRadius:'3px',
     }
-    const subjects=JSON.parse(props.subjects)
+    if (props.subjects){const subjects=JSON.parse(props.subjects)}
     const names=JSON.parse(props.names)
-    const tutor=JSON.parse(props.tutor)
+    if (props.tutor){const tutor=JSON.parse(props.tutor)}
     const user=JSON.parse(props.user)
     return (
             <div className="container">
@@ -29,12 +29,13 @@ const User = (props) => {
                                 <h4 className="card-title">{user.name}</h4>
                                 <p className="card-text">Email: {user.email}</p>
                                 <p className="card-text"><span>Age: {((new Date().getTime() - new Date(user.age)) / (24 * 3600 * 365.25 * 1000)) | 0}</span> <span>Gender: {user.gender}</span></p>
-                                <p className="card-text"><span>City: {tutor.city}</span>  <span>Postcode: {tutor.postcode}</span> </p>
-                                <span>Subjects:</span>{subjects.map((subject)=><span key={subject.id} style={subjStyle} > {names[subject.subject_name_id-1].name}</span>)}
+                                {props.tutor&&<p className="card-text"><span>City: {tutor.city}</span>  <span>Postcode: {tutor.postcode}</span> </p>}
+                                {props.tutor&&<div><span>Subjects:</span>{subjects.map((subject)=><span key={subject.id} style={subjStyle} > {names[subject.subject_name_id-1].name}</span>)}</div>}
                                 <br/>
                             </div>
                         </div>
 
+                        {props.tutor&&
                         <div className="card-body col-12">
                             <div>
                                 <h5>Experience</h5>
@@ -44,7 +45,7 @@ const User = (props) => {
                                 <h5>About</h5>
                                 <p className="card-text">{tutor.about}</p>
                             </div><br/>
-                        </div>
+                        </div>}
                         {props.edit?<a href={`/user/${user.id}/edit`} className="btn btn-primary" style={{backgroundColor:'#698db3'}}>Edit</a>:''}
                     </div>
                 </div>
